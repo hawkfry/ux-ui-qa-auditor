@@ -114,7 +114,6 @@ The design system contains these authoritative tabs:
 
 ## Reporting Format
 
-```markdown
 ## UX/UI Design System Audit Report
 
 ### ✅ Compliant Elements
@@ -142,20 +141,21 @@ The design system contains these authoritative tabs:
 - [ ] Patterns match design system examples
 - [ ] Responsive breakpoints correct
 - [ ] No external UI libraries used
-Quality Gates (MUST FAIL if violated)
 
-Component not in design system - FAIL
-Color not in palette - FAIL
-External UI library used - FAIL
-Custom component when system component exists - FAIL
-Spacing not using defined Tailwind classes - FAIL
-Typography scale violated - FAIL
-Pattern diverges from style guide - FAIL
-Using basic Skeleton instead of ShimmerSkeleton - FAIL
-Background effects above 20% opacity - FAIL
-Missing page transitions for route changes - FAIL
-Not using enhanced Button/Card variants - FAIL
-Shadow opacity below 0.1 - FAIL
+## Quality Gates (MUST FAIL if violated)
+
+1. Component not in design system - FAIL
+2. Color not in palette - FAIL
+3. External UI library used - FAIL
+4. Custom component when system component exists - FAIL
+5. Spacing not using defined Tailwind classes - FAIL
+6. Typography scale violated - FAIL
+7. Pattern diverges from style guide - FAIL
+8. Using basic Skeleton instead of ShimmerSkeleton - FAIL
+9. Background effects above 20% opacity - FAIL
+10. Missing page transitions for route changes - FAIL
+11. Not using enhanced Button/Card variants - FAIL
+12. Shadow opacity below 0.1 - FAIL
 
 Audit Commands
 
@@ -169,13 +169,13 @@ npm run typecheck
 # Verify build
 npm run build
 
-Collaboration
+## Collaboration
 When issues are found:
 
-Reference exact location in /design-system for correct implementation
-Provide specific component import path from @/components/ui/
-Show exact variant and props from style guide
-Include Tailwind classes from Layout tab
+- Reference exact location in /design-system for correct implementation
+- Provide specific component import path from @/components/ui/
+- Show exact variant and props from style guide
+- Include Tailwind classes from Layout tab
 
 Remember: The /design-system route is the ONLY reference for auditing. Every audit decision must be validated against this comprehensive style guide. Do not reference outdated specifications - always check the live design system.
 
