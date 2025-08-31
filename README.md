@@ -9,13 +9,32 @@ Stop your AI from breaking your design system. This subagent automatically audit
 - **Preserves** your main LLM's context by running separately
 - **Enforces** consistent components, colors, typography, and spacing
 
+## Which File to Use?
+
+### 📝 `ux-ui-qa-auditor-template.md` (Recommended Start)
+The **template version** with placeholders for you to customize:
+- All opinionated defaults removed
+- Placeholders ready to replace with your values
+- Minimal tool requirements (Glob, Grep, LS, Read, WebFetch, Bash)
+- Framework-agnostic
+
+### 🔍 `ux-ui-qa-auditor-example.md` (Reference)
+The **example version** showing a complete implementation:
+- Fully configured for Shadcn/ui + Tailwind
+- Includes advanced components and animations
+- Requires MCPs (Supabase, Context7, Serena, Shadcn-ui)
+- Shows best practices and possibilities
+
 ## Quick Start
 
-### 1. Install
-Copy `ux-ui-qa-auditor.md` to your project's `.clde/agents/` directory
+### 1. Choose Your File
+- **Most users**: Copy `ux-ui-qa-auditor-template.md` to `.clde/agents/`
+- **Advanced/Similar stack**: Copy `ux-ui-qa-auditor-example.md` to `.clde/agents/`
 
 ### 2. Configure
-Edit the agent file and replace ALL placeholders:
+If using the template, replace ALL placeholders:
+(you can ask claude code to do this or do it manually)
+placeholder  → example
 
 [YOUR_DESIGN_SYSTEM_ROUTE] → /design-system
 [YOUR_COMPONENT_LIBRARY_PATH] → src/components/ui/
@@ -44,7 +63,7 @@ Your project needs a live design system that the agent can reference. This can b
 - Component documentation site
 
 ### Quality Gates
-The agent includes 12 default quality gates. Customize these in the "Quality Gates" section:
+The agent includes default quality gates. Customize these in the "Quality Gates" section:
 
 1. Component not in design system - FAIL
 2. Color not in palette - FAIL
@@ -93,6 +112,7 @@ The key innovation: By running as a subagent, it can audit massive codebases wit
 - **Design System**: Live reference (route, Storybook, or docs)
 - **Component Library**: Organized UI components
 - **Tools**: File system access (Glob, Grep, LS, Read, WebFetch, Bash)
+- **MCPs** (only for example file): Supabase, Context7, Serena, Shadcn-ui
 
 ## Common Issues
 
